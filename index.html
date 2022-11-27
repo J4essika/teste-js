@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        
+  <h1 id="nome"></h1>
+</div>
+<button onclick="executar(event);">Executar</button>
+<h1>Resultado acima</h1>
+<div id="resultado"></div>
+    
+    
+
+<script>
+function executar(ev) {
+	
+	var dia = prompt("Digite o dia de nascimento");
+	var mes = prompt("Digite o mes de nascimento");
+	var ano = prompt("Digite o ano de nascimento");
+
+	var dataNascimento = new Date(0 + ano, 0 + mes - 1, 0 + dia);
+	var hoje = new Date();
+	var intervalo = hoje - dataNascimento;
+
+	var dias = parseInt((hoje - intervalo) / (24 * 3600 * 1000));
+
+	var d1Y = dataNascimento.getFullYear();
+	var d2Y = hoje.getFullYear();
+	var d1M = dataNascimento.getMonth();
+	var d2M = hoje.getMonth();
+
+	var meses = (d2M+12*d2Y)-(d1M+12*d1Y);
+	var anos = hoje.getFullYear()-dataNascimento.getFullYear();
+	alert ("" + dias + ", " + meses + ", " + anos);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
